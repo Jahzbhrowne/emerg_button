@@ -1,0 +1,8 @@
+		Emerg_button
+
+This project is a system that makes use of the raspberry pi and a button.
+It is made for high security companies like banks, investment companies, schools among others.
+The main purpose of this system is to provide just in time (JIT) intervention in emergency cases. 
+Usually, such emergencies escalate before help comes in. so this sysytem is to ensure that a situation can be salvaged and controlled before it gets out of hand.
+For instance, in cases of fire, the fire button is pressed as soon as the fire alarm sounds, and then a notification containing the exact location of the fire is sent to the fire service for just in time intervention.
+It would be designed in such a way that when pressed,it sends a notification which specifies the exact location and the numbers of hours or minutes it will take to reach the emergency point, to the particular institution appropriate for the specific emergency.
