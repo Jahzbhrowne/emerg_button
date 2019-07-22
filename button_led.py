@@ -1,6 +1,7 @@
 import os
 import time
 from gpiozero import LED, Button, Buzzer
+import requests
 
 red = LED(17)
 green = LED(27)
@@ -47,7 +48,7 @@ def flashingredgreen():
         red.off()
         time.sleep(0.5)
         iCount += 1
-    green.on()
+    #green.on()
     
     
 def flashingsequence():
@@ -56,11 +57,15 @@ def flashingsequence():
     steadyred()
     buzzer_beep()
     flashingredgreen()
-    startgreen()
+    #startgreen()
         
 def button_press():
      button.wait_for_press()
-     return flashingsequence()
+     flashingsequence()
+     r = requests.get("https://maker.ifttt.com/trigger/globalcodeproject/with/key/wU04UjKRQ7uw40h78c8vH")
+     print("Notification send successfully")
+     if r:
+         return startgreen()
     
 
     
