@@ -5,7 +5,9 @@ import requests
 
 red = LED(17)
 green = LED(27)
-button = Button(22)
+btn1 = Button(22)
+btn2 = Button(18)
+btn3 = Button(16)
 bz = Buzzer(14)
 
 
@@ -24,7 +26,7 @@ def steadyred():
 def buzzer_beep():
     # Make the buzzer buzz on and off, half a second of
     # sound followed by half a second of silence
-    print("Start walking")
+    print("Start beeping")
     count = 1
     while count <= 4:
         print("Beep")
@@ -37,7 +39,7 @@ def buzzer_beep():
         
         
 def flashingredgreen():
-    print("Flashing amber and green")
+    print("Flashing red and green")
     red.off()
     green.off()
 
@@ -59,14 +61,41 @@ def flashingsequence():
     flashingredgreen()
     #startgreen()
         
-def button_press():
-     button.wait_for_press()
+def police_button():
+     #button.wait_for_press()
+     flashingsequence()
+     r = requests.get("https://maker.ifttt.com/trigger/nancy/with/key/hMa7HtNAnbnNYmIaqMXhbNKNT3bTAYyemD6uHZveyEw")
+     print("Notification sent successfully")
+     if r:
+         return startgreen()
+    
+def fire_button():
+     #button.wait_for_press()
      flashingsequence()
      r = requests.get("https://maker.ifttt.com/trigger/globalcodeproject/with/key/wU04UjKRQ7uw40h78c8vH")
-     print("Notification send successfully")
+     print("Notification sent successfully")
+     if r:
+         return startgreen()
+        
+    
+def ambu_button():
+     #button.wait_for_press()
+     flashingsequence()  
+     r = requests.get("https://maker.ifttt.com/trigger/button_pressed/with/key/bO2KQdy-gXJhlkQLfYyP3P")
+     print("Notification sent successfully")
      if r:
          return startgreen()
     
 
+while True:
+    if btn1.is_pressed:
+        police_button()
+    elif  btn2.is_pressed:
+        fire_button()
+    elif  btn3.is_pressed:
+        ambu_button()
+    
+         
+    
     
         
