@@ -1,7 +1,9 @@
 import os
 import time
 from gpiozero import LED, Button, Buzzer
+import geolocate
 import requests
+import iftttpost
 
 red = LED(17)
 green = LED(27)
@@ -10,7 +12,7 @@ btn2 = Button(18)
 btn3 = Button(16)
 bz = Buzzer(14)
 
-
+#geolocate.geolocatormap()
 def startgreen():
     print("Green light on")
     green.on()
@@ -60,30 +62,33 @@ def flashingsequence():
     buzzer_beep()
     flashingredgreen()
     #startgreen()
+     
         
 def police_button():
      #button.wait_for_press()
      flashingsequence()
-     r = requests.get("https://maker.ifttt.com/trigger/nancy/with/key/hMa7HtNAnbnNYmIaqMXhbNKNT3bTAYyemD6uHZveyEw")
+     iftttpost.police
      print("Notification sent successfully")
-     if r:
+     if iftttpost.police:
          return startgreen()
     
 def fire_button():
      #button.wait_for_press()
      flashingsequence()
-     r = requests.get("https://maker.ifttt.com/trigger/globalcodeproject/with/key/wU04UjKRQ7uw40h78c8vH")
+     #r = requests.get("https://maker.ifttt.com/trigger/globalcodeproject/with/key/wU04UjKRQ7uw40h78c8vH")
+     iftttpost.fire
      print("Notification sent successfully")
-     if r:
+     if iftttpost.fire:
          return startgreen()
         
     
 def ambu_button():
      #button.wait_for_press()
      flashingsequence()  
-     r = requests.get("https://maker.ifttt.com/trigger/button_pressed/with/key/bO2KQdy-gXJhlkQLfYyP3P")
+     #r = requests.get("https://maker.ifttt.com/trigger/button_pressed/with/key/bO2KQdy-gXJhlkQLfYyP3P")
+     iftttpost.ambulance
      print("Notification sent successfully")
-     if r:
+     if iftttpost.ambulance:
          return startgreen()
     
 
