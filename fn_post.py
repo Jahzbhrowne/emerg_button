@@ -1,11 +1,23 @@
 import requests
-import json
-import geolocate
+import json   
+def police():
+    
+    key = "wU04UjKRQ7uw40h78c8vH"
+    event = 'globalcodeproject'
+    payload1 = 'val 1'
+    payload2 = 'val 2'
+    payload3 = 'val 3'
 
+    url = 'https://maker.ifttt.com/trigger/globalcodeproject/with/key/wU04UjKRQ7uw40h78c8vH' 
+    payload = {"value1" : payload1, "value2" : payload2, "value3" : payload3}
+    headers = {'content-type': 'application/json'}
+    fowardEvent = requests.post(url, data=json.dumps(payload), headers=headers)
+    
+    
 def ambulance():
     ambukey = "hMa7HtNAnbnNYmIaqMXhbNKNT3bTAYyemD6uHZveyEw"
     ambuevent = "nancy"
-    ambu1 = geolocate.location
+    ambu1 = 'nancy'
     ambu2 = "val1"
     ambu3 = "val2"
     
@@ -17,7 +29,7 @@ def ambulance():
 def fire():
     firekey = "bO2KQdy-gXJhlkQLfYyP3P"
     fireevent = "button_pressed"
-    fire1 = geolocate.location
+    fire1 = 'Jasmine'
     fire2 = "val1"
     fire3 = "val2"
     
@@ -25,17 +37,3 @@ def fire():
     firemap = {"value1" : fire1, "value2" :fire2 , "value3" : fire3}
     headers = {'content-type': 'application/json'}
     fowardEvent = requests.post(url, data=json.dumps(firemap), headers=headers)
-    
-    
-def police():
-    
-    key = "wU04UjKRQ7uw40h78c8vH"
-    event = 'globalcodeproject'
-    payload1 = geolocate.location
-    payload2 = 'val 2'
-    payload3 = 'val 3'
-
-    url = 'https://maker.ifttt.com/trigger/globalcodeproject/with/key/wU04UjKRQ7uw40h78c8vH' 
-    payload = {"value1" : payload1, "value2" : payload2, "value3" : payload3}
-    headers = {'content-type': 'application/json'}
-    fowardEvent = requests.post(url, data=json.dumps(payload), headers=headers)

@@ -67,7 +67,7 @@ def flashingsequence():
 def police_button():
      #button.wait_for_press()
      flashingsequence()
-     iftttpost.police
+     iftttpost.police()
      print("Notification sent successfully")
      if iftttpost.police:
          return startgreen()
@@ -76,7 +76,7 @@ def fire_button():
      #button.wait_for_press()
      flashingsequence()
      #r = requests.get("https://maker.ifttt.com/trigger/globalcodeproject/with/key/wU04UjKRQ7uw40h78c8vH")
-     iftttpost.fire
+     iftttpost.fire()
      print("Notification sent successfully")
      if iftttpost.fire:
          return startgreen()
@@ -86,7 +86,7 @@ def ambu_button():
      #button.wait_for_press()
      flashingsequence()  
      #r = requests.get("https://maker.ifttt.com/trigger/button_pressed/with/key/bO2KQdy-gXJhlkQLfYyP3P")
-     iftttpost.ambulance
+     iftttpost.ambulance()
      print("Notification sent successfully")
      if iftttpost.ambulance:
          return startgreen()
