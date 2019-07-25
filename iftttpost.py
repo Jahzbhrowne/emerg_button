@@ -6,8 +6,8 @@ def ambulance():
     ambukey = "hMa7HtNAnbnNYmIaqMXhbNKNT3bTAYyemD6uHZveyEw"
     ambuevent = "nancy"
     ambu1 = geolocate.location
-    ambu2 = "val1"
-    ambu3 = "val2"
+    ambu2 = "this place"
+    ambu3 = "right now"
     
     url = "https://maker.ifttt.com/trigger/nancy/with/key/hMa7HtNAnbnNYmIaqMXhbNKNT3bTAYyemD6uHZveyEw"
     ambu = {"value1" : ambu1, "value2" :ambu2 , "value3" : ambu3}
