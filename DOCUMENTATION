@@ -5,15 +5,18 @@ The name of our project is emerg_button(emergency button).
 The system basically consists of three buttons.
 These buttons will function as emergency callers to the three most important agencies for help in Ghana;the police service, the fire service and the ambulance.
 The system has been designed such that the moment a particular button is pressed,it will send a notification to the right agency for JUST IN TIME intervention.
-We used python,ifttt with GPIO and geopy for the system.
+We used ifttt with GPIO for the system.
 
 OVERWIEW
 Each one of the buttons represents only one of the agencies.
 The red button is for the fire service, white for ambulance and black for the police service.
+Some modules of geopy were imported to access the location of the place where the emergency is.
+A message asking for help has been encoded into the python codes.
 
 THE RUNBOOK
-Use python 3.7. version.
+Use python 3.7 version.
 Make sure geopy has been installed on your pi.(pip3 install geopy)
 Create an ifttt account and make sure your GPIO mobile notification applet is on.
 Change the event name and event key in the iftttpost.py with yours.
 
+ 
